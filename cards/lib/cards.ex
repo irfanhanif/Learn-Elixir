@@ -1,18 +1,19 @@
+## Cards adalah sebuah module
+# module berisi banyak functions dan methods
+
+## Untuk menjalankan methods hello
+# iex -S mix
+# Cards.hello atau
+# Cards.hello() bisa dipanggil tanpa parantheses
+
+## Elixir mempunyai implicit return
+# yaitu mengembalikan nilai variabel yang terakhir kali dipangil
+# bisa juga ditambahkan return
+
 defmodule Cards do
-  @moduledoc """
-  Documentation for Cards.
-  """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Cards.hello
-      :world
-
-  """
   def hello do
-    :world
+    "hi there!"
   end
+
 end
