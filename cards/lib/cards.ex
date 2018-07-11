@@ -1,13 +1,12 @@
-## for suit < suits do === adalah fungsi mapping
-# yang megembalikan array
+## Tuple ditandai dengan char {}
+# adalah list yang mempunyai special meaning
 
-## Pada nested loop yang menghasilkan mapping,
-# akan menghasilkan 2D array karena setiap loop
-# berakhir akan menghasilkan sebuah array mapping
-# hasil dari loop yang berakhir
+## Pattern matching = elixir replacement for
+# variable assignment
 
-## Fungsi flatten digunakan untuk mengubah bentuk
-# 2D list menjadi 1D list
+## Return value berupa tuple ditangkap dengan tuple juga
+# { hand, rest_of_deck } = Cards.deal(deck, 5)
+# ini adalah PATTERN MATCHING
 
 defmodule Cards do
 
@@ -15,15 +14,6 @@ defmodule Cards do
     values = ["Ace", "Two", "Three"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
 
-    ## SOLUTION 1
-    # cards = for value <- values do ## what the...?!
-    #   for suit <- suits do
-    #     "#{value} of #{suit}"
-    #   end
-    # end
-    # List.flatten(cards)
-
-    ## SOLUTION 2
     for suit <- suits, value <- values do
       "#{value} of #{suit}"
     end
@@ -35,6 +25,10 @@ defmodule Cards do
 
   def contains?(deck, card) do
     Enum.member?(deck, card)
+  end
+
+  def deal(deck, hand_size) do
+    Enum.split(deck, hand_size)
   end
 
 end
