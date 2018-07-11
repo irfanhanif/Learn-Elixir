@@ -1,5 +1,3 @@
-## Pipe operator
-
 defmodule Cards do
 
   def create_deck do
@@ -36,12 +34,6 @@ defmodule Cards do
   end
 
   def create_hand(hand_size) do
-    # deck = Cards.create_deck
-    # deck = Cards.shuffle(deck)
-    # hand = Cards.deal(deck, hand_size)
-    # Pipe operator -> return value dari fungsi sebelumnya
-    # menjadi argumen PERTAMA dari fungsi berikutnya
-
     Cards.create_deck
     |> Cards.shuffle
     |> Cards.deal(hand_size)
