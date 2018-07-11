@@ -1,13 +1,6 @@
-# Enum adalah library built in pada elixir
-## tidak perlu melakukan import, langsung bisa digunakan
-
-# Pada terminal...
-## deck = Cards.create_deck
-## Cards.shuffle(deck)
-
-## Immutability: tidak mengganti isi data pada variabel asli
-# melainkan melakukan copy dan do something pada
-# hasil copy tersebut
+## Pada function "contains?" tanda tanya tidak
+# melakukan sesuatu yang spesial
+# hanya konvensi untuk return boolean value
 
 defmodule Cards do
 
@@ -17,6 +10,10 @@ defmodule Cards do
 
   def shuffle(deck) do
     Enum.shuffle(deck)
+  end
+
+  def contains?(deck, card) do
+    Enum.member?(deck, card)
   end
 
 end
