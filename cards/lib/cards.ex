@@ -1,11 +1,25 @@
-## Pada function "contains?" tanda tanya tidak
-# melakukan sesuatu yang spesial
-# hanya konvensi untuk return boolean value
+## for suit < suits do === adalah fungsi mapping
+# yang megembalikan array
+
+## Pada nested loop yang menghasilkan mapping,
+# akan menghasilkan 2D array karena setiap loop
+# berakhir akan menghasilkan sebuah array mapping
+# hasil dari loop yang berakhir
+
+## Fungsi flatten digunakan untuk mengubah bentuk
+# 2D list menjadi 1D list
 
 defmodule Cards do
 
   def create_deck do
-    ["Ace", "Two", "Three"]
+    values = ["Ace", "Two", "Three"]
+    suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
+
+    for value <- values do
+      for suit <- suits do
+        "#{value} of #{suit}"
+      end
+    end
   end
 
   def shuffle(deck) do
