@@ -1,5 +1,4 @@
-## Variabel yang ditambahi underscore di depan
-# adalah variabel yang tidak digunakan
+## Pipe operator
 
 defmodule Cards do
 
@@ -34,5 +33,17 @@ defmodule Cards do
       {:ok, binary} -> :erlang.binary_to_term(binary)
       {:error, _reason} -> "That file does not exist"
     end
+  end
+
+  def create_hand(hand_size) do
+    # deck = Cards.create_deck
+    # deck = Cards.shuffle(deck)
+    # hand = Cards.deal(deck, hand_size)
+    # Pipe operator -> return value dari fungsi sebelumnya
+    # menjadi argumen PERTAMA dari fungsi berikutnya
+
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
   end
 end
