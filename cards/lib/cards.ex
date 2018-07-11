@@ -1,12 +1,4 @@
-## Tuple ditandai dengan char {}
-# adalah list yang mempunyai special meaning
-
-## Pattern matching = elixir replacement for
-# variable assignment
-
-## Return value berupa tuple ditangkap dengan tuple juga
-# { hand, rest_of_deck } = Cards.deal(deck, 5)
-# ini adalah PATTERN MATCHING
+##
 
 defmodule Cards do
 
@@ -31,4 +23,17 @@ defmodule Cards do
     Enum.split(deck, hand_size)
   end
 
+  def save(deck, filename) do
+    binary = :erlang.term_to_binary(deck)
+    File.write(filename, binary)
+  end
+
+  def load(filename) do
+    {status, binary} = File.read(filename)
+
+    case status do
+      :ok -> :erlang.binary_to_term(binary)
+      :error -> "That file does not exist"
+    end
+  end
 end
