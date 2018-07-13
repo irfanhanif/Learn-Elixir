@@ -1,5 +1,8 @@
 defmodule Cards.MixProject do
   use Mix.Project
+  @moduledoc """
+    Provides methods for creating and handling def of cards
+  """
 
   def project do
     [
